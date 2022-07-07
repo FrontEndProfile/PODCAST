@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+// =========
+// VARIABLES 
+$light:#F5F0FF;
+$dark :#021739;
+$primary:#031639;
+$secondary: #788190;
+$black:#021639;
+$btn-gradient : linear-gradient(244.98deg, #FCB564 0.67%, 
+rgba(251, 111, 255, 0) 30.1%), 
+linear-gradient(66.56deg, #706CEB 0.07%, 
+#FF65F2 82.88%);
+$bg-banner:linear-gradient(-330deg, #FCB564 0.67%, 
+rgba(251, 111, 255, 0) 30.1%), 
+linear-gradient(-66.56deg, #706CEB 0.07%, 
+#FF65F2 82.88%);
+$poppins :'Poppins', sans-serif;
+$grotesk :'Space Grotesk', sans-serif;
+$font-family-base: $poppins !default;
+$headings-font-family: $grotesk !default;
+// ===========================================================
+
+
+// 14px *
+// 15px
+// 16px *
+// 18px *
+// 19.69px
+// 25px
+// 28px 
+// 40px
+// 46px *
+// 55px
+// 66px 
+// 12px card review 
+//============
+$font-sizes: (
+  1: 66px,
+  2: 55px,
+  3: 46px,
+  4: 40px,
+  5: 25px,
+  6: 18px
+);
+//============
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$dark}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+//================================================
+@import "../node_modules/bootstrap/scss/bootstrap";
+// ===============================================
+$px-12: 12px;
+$px-14: 14px;
+$px-15: 15px;
+$px-16: 16px;
+$px-20: 19.69px;
+$px-28: 28px;
+$transparency-color:rgba(0, 0, 0, 0.15);
+// =========================
+.fs--12 { font-size: $px-12}
+.fs--14 { font-size: $px-14}
+.fs--15 { font-size: $px-15}
+.fs--16 { font-size: $px-16}
+.fs--20 { font-size: $px-20}
+.fs--28 { font-size: $px-28}
+
+.fw-500 {  font-weight: 500;}
+// =========================
+.rounded--6px { border-radius: 6px;}
+// =========================
+.anim-02 {
+  &:hover {
+    transition: 0.9s !important;
+  }
+}
+// =========================
+/* Remove default margin */
+* , body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+html {
+  font-size: 16px;
+}
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+// =========================
+.btn-gradient {
+  background-image: $btn-gradient;
+}
+.bg-banner {
+  background-image: $bg-banner;
+}
+.dark-logo { width: 200px;}
+.btn-standerd-space { padding: 14px 16px !important;}
+
+.footerSocial {
+  li {
+    margin-right: 14px;
+    a {
+      border: 1.5px solid white;
+      display: block;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      text-align: center;
+      &:hover {
+        background: $btn-gradient;
+      }
+      i {
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+    }
+  }
+}
+.btn--base {
+  display: inline-block;
+  padding: 14px 18px;
+  background: $light;
+  @extend .rounded--6px;
+}
+.btn--trans-50 { background: $transparency-color !important;}
+// HEADER === === === 
+header {
+  .navbar-brand {
+    width: 150px;
+  }
+  .btn {
+    @extend .btn--base;
+  }
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        margin: 0px 10px;
+        
+      }
+    }
+  }
+}
+
+// BANNER 
+.banner {
+  .container {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60%;
+      background: $bg-banner;
+      z-index: -1;
+      border-radius: 24px;
+    }
+  }
+  &__btns {
+    a {
+      @extend .btn--base;
+    }
+  }
+  &__cards {
+    grid-column-gap: 15px;
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur( 6px );
+      -webkit-backdrop-filter: blur( 6px );
+      border-radius: 19px;
+      border: 12px solid rgba( 255, 255, 255, 0.18 );
+      img {
+        height: 100%;
+        transition: 0.5s all;
+      }
+      &:hover {
+        img {
+          transition: 0.6s all;
+          box-shadow: rgba(239, 68, 188, 0.195) 0px 7px 29px 0px;
+        }
+      }
+    }
+  }
+}
